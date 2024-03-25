@@ -12,7 +12,7 @@ class ClickerWindow(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle('Clicker')
+        self.setWindowTitle('Capy Clicker')
         self.setGeometry(100, 100, 600, 400)
 
         # Layout pour les éléments existants
