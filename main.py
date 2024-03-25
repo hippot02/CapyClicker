@@ -1,16 +1,41 @@
-# This is a sample Python script.
+import sys
+from PySide6.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
+from PySide6.QtGui import QPixmap
+from PySide6.QtCore import Qt
 
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+class ClickerWindow(QWidget):
+    def __init__(self):
+        super().__init__()
 
+        self.click_count = 0
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+        self.initUI()
 
+    def initUI(self):
+        self.setWindowTitle('Clicker')
+        self.setGeometry(100, 100, 300, 200)
 
-# Press the green button in the gutter to run the script.
+        self.click_label = QLabel('Nombre de Points: 0', self)
+        self.click_label.setAlignment(Qt.AlignCenter)
+
+        self.image_label = QLabel(self)
+        pixmap = QPixmap('classique.jpg')
+        self.image_label.setPixmap(pixmap)
+        self.image_label.setScaledContents(True)
+        self.image_label.mousePressEvent = self.on_click
+
+        layout = QVBoxLayout()
+        layout.addWidget(self.click_label)
+        layout.addWidget(self.image_label)
+
+        self.setLayout(layout)
+
+    def on_click(self, event):
+        self.click_count += 1
+        self.click_label.setText(f'Nombre de clics: {self.click_count}')
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    app = QApplication(sys.argv)
+    window = ClickerWindow()
+    window.show()
+    sys.exit(app.exec())
