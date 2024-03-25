@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6f59365-a5b2-494f-b8ef-209fa0c11e5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/classique.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CapyClicker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CapyClicker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f6f59365-a5b2-494f-b8ef-209fa0c11e5e" name="Changes" comment="Base classique clicker">
+      <change afterPath="$PROJECT_DIR$/.gitIgnore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,12 +91,25 @@
       <workItem from="1710257980792" duration="4000" />
       <workItem from="1710259269665" duration="1145000" />
       <workItem from="1710864737225" duration="626000" />
-      <workItem from="1711365794526" duration="1010000" />
+      <workItem from="1711365794526" duration="1471000" />
     </task>
+    <task id="LOCAL-00001" summary="Base classique clicker">
+      <option name="closed" value="true" />
+      <created>1711366840544</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711366840544</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Base classique clicker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base classique clicker" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CapyClicker$main.coverage" NAME="main Coverage Results" MODIFIED="1711366787268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
