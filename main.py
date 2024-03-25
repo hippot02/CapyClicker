@@ -32,7 +32,7 @@ class ClickerWindow(QWidget):
 
     def on_click(self, event):
         self.click_count += 1
-        self.click_label.setText(f'Nombre de clics: {self.click_count}')
+        self.click_label.setText(f'Nombre de Points: {self.click_count}')
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
