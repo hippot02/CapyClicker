@@ -41,8 +41,6 @@ class ClickerWindow(QWidget):
             with open('config.txt', 'r') as f:
                 return int(f.read())
         except FileNotFoundError:
-            return 0
-        except ValueError:
             print("Erreur: Impossible de lire le nombre de points à partir du fichier.")
             return 0
 
@@ -50,7 +48,7 @@ class ClickerWindow(QWidget):
         try:
             with open('config.txt', 'w') as f:
                 f.write(str(self.click_count))
-        except IOError:
+        except OSError:
             print("Erreur: Impossible de sauvegarder le nombre de points dans le fichier.")
 
 
