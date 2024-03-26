@@ -3,7 +3,7 @@ from PySide6.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QPushB
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import Qt
 
-a
+
 class ClickerWindow(QWidget):
     def __init__(self):
         super().__init__()
