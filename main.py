@@ -57,8 +57,7 @@ class ClickerWindow(QWidget):
                 self.click_count -= price
                 self.click_count = round(self.click_count,2)
                 self.click_label.setText(f'Nombre de Points: {self.click_count}')
-                price += price * 0.1
-                price = round(price, 2)
+                price += int(price * 0.1)
                 button.setText(f"{name}\n{description}\nPrix : {price}")
 
                 self.points_per_click += points_increase
@@ -91,11 +90,11 @@ class ClickerWindow(QWidget):
             with open('config.txt', 'r') as f:
                 lines = f.readlines()
                 if len(lines) >= 5:
-                    click_count = float(lines[0].strip())
-                    points_per_click = float(lines[1].strip())
-                    price_capyvien = float(lines[2].strip())
-                    price_amelioration_2 = float(lines[3].strip())
-                    price_capy_fabien = float(lines[4].strip())
+                    click_count = int(lines[0].strip())
+                    points_per_click = int(lines[1].strip())
+                    price_capyvien = int(lines[2].strip())
+                    price_amelioration_2 = int(lines[3].strip())
+                    price_capy_fabien = int(lines[4].strip())
                     return click_count, points_per_click, price_capyvien, price_amelioration_2, price_capy_fabien
                 else:
                     print("Les données dans le fichier config.txt sont incomplètes.")
