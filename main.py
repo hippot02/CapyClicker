@@ -98,14 +98,14 @@ class ClickerWindow(QWidget):
                     return click_count, points_per_click, price_capyvien, price_amelioration_2, price_capy_fabien
                 else:
                     print("Les données dans le fichier config.txt sont incomplètes.")
-                    return 0, 1, 5, 50, 100  # Valeurs par défaut
+                    return 0, 1, 10, 50, 100  # Valeurs par défaut
         except FileNotFoundError:
             print("Le fichier config.txt n'existe pas. Création avec les valeurs par défaut.")
             self.save_click_data()
-            return 0, 1, 5, 50, 100  # Valeurs par défaut
+            return 0, 1, 10, 50, 100  # Valeurs par défaut
         except (ValueError, IndexError):
             print("Erreur lors de la lecture des données dans le fichier config.txt.")
-            return 0, 1, 5, 50, 100  # Valeurs par défaut
+            return 0, 1, 10, 50, 100  # Valeurs par défaut
 
     def save_click_data(self):
         try:
