@@ -50,7 +50,7 @@ class ClickerWindow(QWidget):
 
         self.setLayout(main_layout)
 
-    def create_amelioration_button(self, name, description, price):
+    def create_amelioration_button(self, name, description, points_increase, price):
         def update_and_increase_price():
             nonlocal price
             if self.click_count >= price:
