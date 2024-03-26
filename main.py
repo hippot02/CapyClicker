@@ -1,8 +1,9 @@
 import sys
-from PySide6.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QPushButton, QFrame, QHBoxLayout
-from PySide6.QtGui import QPixmap
+from PySide6.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QPushButton, QFrame, QHBoxLayout, \
+    QSystemTrayIcon
+from PySide6.QtGui import QPixmap, QFont, QIcon
 from PySide6.QtCore import Qt
-
+import ctypes
 
 class ClickerWindow(QWidget):
     def __init__(self):
@@ -16,16 +17,35 @@ class ClickerWindow(QWidget):
         self.setWindowTitle('Capy Clicker')
         self.setGeometry(100, 100, 600, 400)
 
+        # Icone de l'appli
+        app_icon = QIcon('asset/images/capy_costard.jpg')
+        app.setWindowIcon(app_icon)
+
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('asset/images/capy_costard.jpg')
+
+
         # Layout pour les éléments existants
         existing_layout = QVBoxLayout()
 
+        font = QFont("arial")
+        font.setPointSize(16)
+
+        # Affichage des degats
+        self.click_damage = QLabel(f'Points par clic {self.points_per_click}')
+        self.click_damage.setFont(font)
+        existing_layout.addWidget(self.click_damage)
+
+        # Affichage des CapyDollars
         self.click_label = QLabel(f'Nombre de Points: {self.click_count}')
         self.click_label.setAlignment(Qt.AlignCenter)
+        self.click_label.setFont(font)
         existing_layout.addWidget(self.click_label)
 
+        # Image
         self.image_label = QLabel(self)
-        pixmap = QPixmap('classique.jpg')
+        pixmap = QPixmap('asset/images/capy_gun.jpg')
         self.image_label.setPixmap(pixmap)
+        self.image_label.setFixedSize(400, 400)
         self.image_label.setScaledContents(True)
         self.image_label.mousePressEvent = self.on_click
         existing_layout.addWidget(self.image_label)
@@ -62,6 +82,7 @@ class ClickerWindow(QWidget):
                 button.setText(f"{name}\n{description}\nPrix : {price}")
 
                 self.points_per_click += points_increase
+                self.click_damage.setText(f'Dégats par clique  {self.points_per_click}')
 
                 if button.text().startswith("Capyvien"):
                     self.PRICE_CAPYVIEN = price
@@ -71,8 +92,6 @@ class ClickerWindow(QWidget):
                     self.PRICE_CAPY_FABIEN = price
 
                 self.save_click_data()
-            else:
-                print("Vous n'avez pas assez de points pour acheter cette amélioration.")
 
         button = QPushButton(f"{name}\n{description}\nPrix : {price}")
         button.clicked.connect(update_and_increase_price)
@@ -119,6 +138,7 @@ class ClickerWindow(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+
     window = ClickerWindow()
     window.show()
     sys.exit(app.exec())
