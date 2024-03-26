@@ -61,6 +61,8 @@ class ClickerWindow(QWidget):
                 price = round(price, 2)
                 button.setText(f"{name}\n{description}\nPrix : {price}")
 
+                self.points_per_click += points_increase
+
                 if button.text().startswith("Capyvien"):
                     self.PRICE_CAPYVIEN = price
                 elif button.text().startswith("Amélioration 2"):
@@ -77,6 +79,7 @@ class ClickerWindow(QWidget):
         self.ameliorations_layout.addWidget(button)
 
         update_and_increase_price()
+
 
     def on_click(self, event):
         self.click_count += self.points_per_click
