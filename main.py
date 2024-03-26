@@ -82,7 +82,7 @@ class ClickerWindow(QWidget):
                 button.setText(f"{name}\n{description}\nPrix : {price}")
 
                 self.points_per_click += points_increase
-                self.click_damage.setText(f'Dégats par clique  {self.points_per_click}')
+                self.click_damage.setText(f'Points par clic :  {self.points_per_click}')
 
                 if button.text().startswith("Capyvien"):
                     self.PRICE_CAPYVIEN = price
