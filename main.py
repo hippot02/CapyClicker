@@ -3,6 +3,7 @@ from PySide6.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QPushB
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import Qt
 
+a
 class ClickerWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -10,7 +11,7 @@ class ClickerWindow(QWidget):
         self.click_count, self.points_per_click = self.load_click_data()
 
         self.initUI()
-
+        
     def initUI(self):
         self.setWindowTitle('Capy Clicker')
         self.setGeometry(100, 100, 600, 400)
